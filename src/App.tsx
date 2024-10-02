@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
-import ClientList from "./pages/List";
+import ClientList from "./pages/ListClients";
 import User from "./context/User/Context";
 import "./global.css";
 import ClientsContext from "./context/Clients/Context";

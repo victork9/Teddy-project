@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 .vite
-coverage/icov-report/
+
 
 # Editor directories and files
 .vscode/*
