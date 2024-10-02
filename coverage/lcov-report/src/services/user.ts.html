@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/15</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -138,36 +138,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import api from './';
 &nbsp;
@@ -191,36 +191,36 @@ export type Client = {
 } &amp; User
 &nbsp;
 &nbsp;
-export const getAllUsers = async (page: number = 1, limit = 16): Promise&lt;UsersList&gt; =&gt; {
+export const getAllClients = async (page: number = 1, limit = 16): Promise&lt;UsersList&gt; =&gt; {
 &nbsp;
 	const response = await api.get(`/users?limit=${limit}&amp;page=${page}`, {
 &nbsp;
 	})
-<span class="cstat-no" title="statement not covered" >	return response.data</span>
+	return response.data
 }
-export const getUserById = async (id: number): Promise&lt;Client&gt; =&gt; {
+export const getClienteById = async (id: number): Promise&lt;Client&gt; =&gt; {
 	const response = await api.get(`/users/${id}`, {
 		headers: {
 			'Content-Type': 'application/json',
 		}
 	})
-<span class="cstat-no" title="statement not covered" >	return response.data</span>
+	return response.data
 &nbsp;
 }
 export const createUser = async (body: User) =&gt; {
 	const response = await api.post(`/users`, body)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return response.data</span>
+	return response.data
 }
-export const editUser = async (body: User, id: number) =&gt; {
+export const editClient = async (body: User, id: number) =&gt; {
 	const response = await api.patch(`/users/${id}`, body)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return response.data</span>
+	return response.data
 }
-export const deleteClient = <span class="fstat-no" title="function not covered" >as</span>ync (id: number) =&gt; {
-	const response = <span class="cstat-no" title="statement not covered" >await api.delete(`/users/${id}`)</span>
+export const deleteClient = async (id: number) =&gt; {
+	const response = await api.delete(`/users/${id}`)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return response.data</span>
+	return response.data
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -229,7 +229,7 @@ export const deleteClient = <span class="fstat-no" title="function not covered" 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-10-02T21:23:31.570Z
+                at 2024-10-02T21:56:28.063Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

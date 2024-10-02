@@ -20,14 +20,14 @@ export type Client = {
 } & User
 
 
-export const getAllUsers = async (page: number = 1, limit = 16): Promise<UsersList> => {
+export const getAllClients = async (page: number = 1, limit = 16): Promise<UsersList> => {
 
 	const response = await api.get(`/users?limit=${limit}&page=${page}`, {
 
 	})
 	return response.data
 }
-export const getUserById = async (id: number): Promise<Client> => {
+export const getClienteById = async (id: number): Promise<Client> => {
 	const response = await api.get(`/users/${id}`, {
 		headers: {
 			'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export const createUser = async (body: User) => {
 
 	return response.data
 }
-export const editUser = async (body: User, id: number) => {
+export const editClient = async (body: User, id: number) => {
 	const response = await api.patch(`/users/${id}`, body)
 
 	return response.data

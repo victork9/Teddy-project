@@ -19,7 +19,7 @@ import { HamburgerMenu, Header, Nav } from "./styles";
 const App = () => {
     const { user } = useContextUser();
     const { clients, setClients } = useContextClients();
-    const { loading, handleCreateUser, handleGetUser, handleEditClient, handleDeleteClient, handleGetAllClients } = useClients();
+    const { loading, handleCreateClient, handleGetUser, handleEditClient, handleDeleteClient, handleGetAllClients } = useClients();
     const [limit, setLimit] = useState(16);
 
     const [userData, setUserData] = useState<any>({
@@ -64,7 +64,7 @@ const App = () => {
         handleShowModal(true, "edit");
     };
     const onCreateUser = async () => {
-        await handleCreateUser({
+        await handleCreateClient({
             ...userData,
             salary: convertToNumber(userData.salary),
             companyValuation: convertToNumber(userData.companyValuation),
