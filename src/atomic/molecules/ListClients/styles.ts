@@ -40,7 +40,7 @@ export const cardActions: SxProps = {
 	},
 }
 
-export const card: SxProps = { minWidth: 250, boxShadow: "0 2px 4px rgb(0 0 0 / 0.2)" }
+export const card: SxProps = { minWidth: 250, boxShadow: "0 2px 4px rgb(0 0 0 / 0.2)", flex: 1 }
 
 export const selectHeader: SxProps = {
 	".MuiSelect-select": {
