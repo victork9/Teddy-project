@@ -8,13 +8,13 @@
 
 ## Como rodar o projeto
 
--   dar um git clone no repositório
+-   primeiro devemos clonar o repositório
 
 ```js
 https://github.com/victork9/Teddy-project.git
 ```
 
--   Instalar as dependências
+-  Insale as dependência
 
 ```js
 yarn ou yarn install
