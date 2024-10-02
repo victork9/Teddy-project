@@ -1,0 +1,16 @@
+<testExecutions version="1">
+<file path="src/utils/index.spec.ts">
+<testCase name="Testing utils Testing formatcurrency" duration="31" />
+</file>
+<file path="src/context/User/index.spec.tsx">
+<testCase name="Testing Searchengines context Test useContext" duration="8" />
+<testCase name="Testing Searchengines context test empty context" duration="2" />
+<testCase name="Testing Searchengines context test empty context" duration="1" />
+<testCase name="Testing Searchengines context testing provider" duration="65" />
+</file>
+<file path="src/context/Clients/index.spec.tsx">
+<testCase name="Testing Searchengines context Test useContext" duration="9" />
+<testCase name="Testing Searchengines context test empty context" duration="3" />
+<testCase name="Testing Searchengines context testing provider" duration="78" />
+</file>
+</testExecutions>
