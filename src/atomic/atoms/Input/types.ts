@@ -1,3 +1,9 @@
 
 
-export interface Props { value: string, onChange: (value: string) => void, label: string;[key: string]: any }
+export interface Props {
+	value: string,
+	onChange: (value: string) => void,
+	label: string;
+	Id?: string;
+	[key: string]: any
+}

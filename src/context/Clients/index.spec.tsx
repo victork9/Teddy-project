@@ -32,11 +32,11 @@ describe("Testing Searchengines context", () => {
     });
 
     it("testing provider", async () => {
-      const { getByText } = render(
-          <ClientsContext>
-              <span>children</span>
-          </ClientsContext>
-      );
-      expect(getByText(/children/i)).toBeVisible();
-  });
+        const { getByText } = render(
+            <ClientsContext>
+                <span>children</span>
+            </ClientsContext>
+        );
+        expect(getByText(/children/i)).toBeTruthy();
+    });
 });

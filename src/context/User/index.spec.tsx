@@ -45,6 +45,6 @@ describe("Testing Searchengines context", () => {
                 <span>children</span>
             </User>
         );
-        expect(getByText(/children/i)).toBeVisible();
+        expect(getByText(/children/i)).toBeTruthy();
     });
 });

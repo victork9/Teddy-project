@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+COMMIT_SOURCE=$(cat "$1")
+
+if [ "COMMIT_SOURCE" != "rebase" ] || [ "COMMIT_SOURCE" != "merge" ]; then
+    exec < /dev/tty && git cz --hook || true
+fi

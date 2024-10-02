@@ -17,7 +17,7 @@ export default function BasicModal({ title, visible, onClose, children }: Props)
                         <Typography id="modal-modal-title" variant="h6" component="h2">
                             {title}
                         </Typography>
-                        <Close sx={stylesIcon} onClick={handleClose} />
+                        <Close data-testid="close-modal" sx={stylesIcon} onClick={handleClose} />
                     </Stack>
                     {children}
                 </Box>

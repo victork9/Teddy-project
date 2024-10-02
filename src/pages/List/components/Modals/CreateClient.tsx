@@ -17,13 +17,15 @@ const CreateClient: React.FC<Props> = ({ visible, onCloseModal, userData, handle
     return (
         <BasicModal title="Criar cliente:" visible={visible} onClose={onCloseModal}>
             <Input
-                label={"Digite o nome"}
+                Id="nameCreateuser"
+                label={"Digite o nome:"}
                 value={userData?.name}
                 onChange={(value: string) => {
                     handleChangeUser("name", value);
                 }}
             />
             <Input
+                Id="salaryCreateuser"
                 label={"Digite o salário:"}
                 value={String(userData?.salary)}
                 onChange={(value: string) => {
@@ -31,6 +33,7 @@ const CreateClient: React.FC<Props> = ({ visible, onCloseModal, userData, handle
                 }}
             />
             <Input
+                Id="companyCreateuser"
                 label={"Digite o valor da empresa:"}
                 value={String(userData?.companyValuation)}
                 onChange={(value: string) => {

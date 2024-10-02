@@ -32,13 +32,20 @@ export const ListClientsBody: React.FC<BodyList> = ({ clients, addAction, editAc
                                 </Typography>
                             </CardContent>
                             <CardActions sx={cardActions}>
-                                <AddIcon onClick={addAction} />
+                                <AddIcon
+                                    data-testid={`addIcon${item.id}`}
+                                    onClick={() => {
+                                        addAction();
+                                    }}
+                                />
                                 <CreateIcon
+                                    data-testid={`editIcon${item.id}`}
                                     onClick={() => {
                                         editAction(item);
                                     }}
                                 />
                                 <DeleteIcon
+                                    data-testid={`deleteIcon${item.id}`}
                                     color="error"
                                     onClick={() => {
                                         deleteAction(item);
