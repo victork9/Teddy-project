@@ -20,7 +20,6 @@ export type Client = {
 } & User
 
 
-
 export const getAllUsers = async (page: number = 1, limit = 16): Promise<UsersList> => {
 
 	const response = await axios.get(`/api/users?limit=${limit}&page=${page}`, {
