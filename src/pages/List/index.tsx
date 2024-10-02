@@ -1,4 +1,3 @@
-
 import MenuIcon from "@mui/icons-material/Menu";
 
 import LogoTedy from "../../assets/logo.png";
@@ -15,44 +14,7 @@ import EditClient from "./components/Modals/EditClient";
 import CreateClient from "./components/Modals/CreateClient";
 import DeleteClient from "./components/Modals/DeleteClient";
 import ListOrganism from "@atomic/organism/ListOrganism";
-
-const Header = {
-    display: "flex",
-    zIndex: 100,
-    boxShadow: "0 2px 4px rgb(0 0 0 / 0.2)",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "white",
-    position: "fixed",
-    top: 0,
-    right: 0,
-    left: 0,
-
-    padding: "26px 120px",
-    " @media (max-width: 768px)": {
-        justifyContent: "space-between",
-        padding: "20px 18px",
-    },
-};
-
-const Nav = {
-    display: "flex",
-    gap: "20px",
-
-    "@media (max-width: 768px)": {
-        display: "none",
-        padding: "20px 18px",
-    },
-};
-
-const HamburgerMenu = {
-    display: "none",
-    cursor: "pointer",
-    " @media (max-width: 768px)": {
-        display: "flex",
-        alignItems: "center",
-    },
-};
+import { HamburgerMenu, Header, Nav } from "./styles";
 
 const App = () => {
     const { user } = useContextUser();
@@ -84,7 +46,11 @@ const App = () => {
     };
 
     const onCloseModal = () => {
-        setUserData(null);
+        setUserData({
+            name: "",
+            salary: formatCurrencyToFields(""),
+            companyValuation: formatCurrencyToFields(""),
+        });
         handleShowModal(false);
     };
 
@@ -92,8 +58,8 @@ const App = () => {
         const response = await handleGetUser(id);
         setUserData({
             ...response,
-            salary: formatCurrencyToFields(String(response?.salary)),
-            companyValuation: formatCurrencyToFields(String(response?.companyValuation)),
+            salary: formatCurrencyToFields(String(response!.salary * 100)),
+            companyValuation: formatCurrencyToFields(String(response!.companyValuation * 100)),
         });
         handleShowModal(true, "edit");
     };
@@ -108,8 +74,8 @@ const App = () => {
     const onEditClient = async () => {
         await handleEditClient(userData.id, {
             ...userData,
-            salary: convertToNumber(userData.salary),
-            companyValuation: convertToNumber(userData.companyValuation),
+            salary: convertToNumber(userData?.salary),
+            companyValuation: convertToNumber(userData?.companyValuation),
         });
         onCloseModal();
     };
