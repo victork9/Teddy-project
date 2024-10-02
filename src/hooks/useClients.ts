@@ -6,8 +6,6 @@ export const useClients = () => {
 	const [loading, setIsLoading] = useState(false)
 	const { setClients, } = useContextClients()
 
-
-
 	const handleGetAllClients = async (page = 1, limit?: number) => {
 		setIsLoading(true)
 
@@ -16,7 +14,6 @@ export const useClients = () => {
 		setIsLoading(false)
 
 	};
-
 
 	const handleGetUser = async (id: number) => {
 		try {

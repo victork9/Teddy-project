@@ -1,12 +1,13 @@
 import React from "react";
 import { Box, Button, Pagination } from "@mui/material";
 import { PropsButton, PropsPagination } from "./types";
-import { buttonFotter } from "./styles";
+import { buttonFotter, paginationStyle } from "./styles";
 
 export const ListClientsFooterPagination: React.FC<PropsPagination> = ({ onChangePage, clients }) => {
     return (
         <Box display={"flex"} justifyContent={"center"} padding={"20px 0"}>
             <Pagination
+                sx={paginationStyle}
                 data-testid="pagintaion-footer"
                 boundaryCount={1}
                 onChange={(_, value) => onChangePage(value)}

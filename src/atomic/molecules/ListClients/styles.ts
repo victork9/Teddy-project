@@ -47,3 +47,19 @@ export const selectHeader: SxProps = {
 		padding: "4px 12px",
 	},
 }
+export const paginationStyle: SxProps = {
+	".Mui-selected": {
+		background: "#EC6724",
+		color: "white",
+		borderRadius: "4px",
+		":hover": {
+			background: "#EC6724AA",
+		},
+	},
+	".MuiPaginationItem-root": {
+		":hover": {
+			background: "#EC6724AA",
+			borderRadius: "4px",
+		},
+	},
+}
