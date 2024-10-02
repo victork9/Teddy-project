@@ -6,7 +6,7 @@ const LoadingSpinner = ({ show }: Props) => {
 
     return (
         <Backdrop sx={(theme) => ({ zIndex: theme.zIndex.drawer + 1 })} open>
-            <CircularProgress color="warning" />
+            <CircularProgress data-testid="spinner" color="warning" />
         </Backdrop>
     );
 };

@@ -17,13 +17,15 @@ const EditClient: React.FC<Props> = ({ visible, onCloseModal, userData, handleCh
     return (
         <BasicModal title="Editar cliente:" visible={visible} onClose={onCloseModal}>
             <Input
-                label={"Digite o nome"}
+                Id="nameEdituser"
+                label={"Digite o nome:"}
                 value={userData?.name}
                 onChange={(value: string) => {
                     handleChangeUser("name", value);
                 }}
             />
             <Input
+                Id="salaryEdituser"
                 label={"Digite o salário:"}
                 value={String(userData?.salary)}
                 onChange={(value: string) => {
@@ -31,6 +33,7 @@ const EditClient: React.FC<Props> = ({ visible, onCloseModal, userData, handleCh
                 }}
             />
             <Input
+                Id="companyEdituser"
                 label={"Digite o valor da empresa:"}
                 value={String(userData?.companyValuation)}
                 onChange={(value: string) => {
@@ -46,7 +49,7 @@ const EditClient: React.FC<Props> = ({ visible, onCloseModal, userData, handleCh
                 }}
                 onClick={onAction}
             >
-                Editar cliente:
+                Editar cliente
             </Button>
         </BasicModal>
     );
