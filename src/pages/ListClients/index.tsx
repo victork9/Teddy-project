@@ -132,11 +132,12 @@ const App = () => {
                     <img src={LogoTedy} alt="Logo" />
                 </div>
                 <Box sx={Nav}>
-                    <Typography sx={{ textDecoration: "underline" }} color="warning">
+                    <Typography sx={{ textDecoration: "underline" }} fontWeight={"400"} color="warning">
                         Clientes
                     </Typography>
-                    <Typography>Clientes selecionados</Typography>
+                    <Typography fontWeight={"400"}>Clientes selecionados</Typography>
                     <Typography
+                        fontWeight={"400"}
                         onClick={() => navigate(-1)}
                         sx={{
                             cursor: "pointer",
