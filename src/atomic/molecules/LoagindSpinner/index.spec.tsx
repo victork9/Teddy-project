@@ -1,4 +1,3 @@
-import React from "react";
 import LoadingSpinner from "./";
 import { render } from "@testing-library/react";
 import { expect } from "@jest/globals";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Body, FooterButton, FooterPagination, Header } from "./";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { expect } from "@jest/globals";

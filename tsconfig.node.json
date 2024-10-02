@@ -16,6 +16,7 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "baseUrl": "./",
+        "types": ["@testing-library/jest-dom"],
         "paths": {
             "@/*": ["src/*"],
             "@context/*": ["src/context/*"],

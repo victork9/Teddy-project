@@ -26,7 +26,7 @@ describe("Testing Searchengines context", () => {
             (useContextMock as jest.Mock).mockReturnValue(undefined);
 
             await expect(() => useContextUser()).rejects.toThrow();
-        } catch (error) {
+        } catch (error: any) {
             expect(error.message).toBe("useContextUser must be used within a Searchprovider");
         }
     });
@@ -35,7 +35,7 @@ describe("Testing Searchengines context", () => {
             (useContextMock as jest.Mock).mockReturnValue(undefined);
 
             await expect(() => useContextUser()).rejects.toThrow();
-        } catch (error) {
+        } catch (error: any) {
             expect(error.message).toBe("useContextUser must be used within a Searchprovider");
         }
     });

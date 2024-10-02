@@ -1,7 +1,5 @@
-import React from "react";
 import ListOrganism from "./ListOrganism";
-import { render, screen } from "@testing-library/react";
-import { expect } from "@jest/globals";
+import { render } from "@testing-library/react";
 const mockClients = {
     clients: [
         {
@@ -98,7 +96,7 @@ describe("Testing ListOrganism organism", () => {
         const mockOnClick = jest.fn();
         const mockOnChangePage = jest.fn();
 
-        const { getByTestId } = render(
+        render(
             <ListOrganism
                 header={{
                     limit: 3,
@@ -118,6 +116,5 @@ describe("Testing ListOrganism organism", () => {
                 }}
             />
         );
-
     });
 });
