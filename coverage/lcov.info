@@ -178,7 +178,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src/pages/List/components/Modals/CreateClient.tsx
+SF:src/pages/ListClients/components/Modals/CreateClient.tsx
 FN:16,(anonymous_0)
 FN:23,(anonymous_1)
 FN:31,(anonymous_2)
@@ -200,7 +200,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/pages/List/components/Modals/DeleteClient.tsx
+SF:src/pages/ListClients/components/Modals/DeleteClient.tsx
 FN:12,(anonymous_0)
 FNF:1
 FNH:1
@@ -213,7 +213,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src/pages/List/components/Modals/EditClient.tsx
+SF:src/pages/ListClients/components/Modals/EditClient.tsx
 FN:16,(anonymous_0)
 FN:23,(anonymous_1)
 FN:31,(anonymous_2)

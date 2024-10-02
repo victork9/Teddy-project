@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1727895827106" clover="3.2.0">
-  <project timestamp="1727895827106" name="All files">
+<coverage generated="1727896841121" clover="3.2.0">
+  <project timestamp="1727896841121" name="All files">
     <metrics statements="95" coveredstatements="72" conditionals="5" coveredconditionals="5" methods="39" coveredmethods="35" elements="139" coveredelements="112" complexity="0" loc="95" ncloc="95" packages="9" files="13" classes="13"/>
     <package name="src">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
@@ -104,9 +104,9 @@
         <line num="71" count="8" type="stmt"/>
       </file>
     </package>
-    <package name="src.pages.List.components.Modals">
+    <package name="src.pages.ListClients.components.Modals">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="9"/>
-      <file name="CreateClient.tsx" path="/Users/victorsouza/Desktop/Developments/Teddy/src/pages/List/components/Modals/CreateClient.tsx">
+      <file name="CreateClient.tsx" path="/Users/victorsouza/Desktop/Developments/Teddy/src/pages/ListClients/components/Modals/CreateClient.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
@@ -114,12 +114,12 @@
         <line num="32" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
       </file>
-      <file name="DeleteClient.tsx" path="/Users/victorsouza/Desktop/Developments/Teddy/src/pages/List/components/Modals/DeleteClient.tsx">
+      <file name="DeleteClient.tsx" path="/Users/victorsouza/Desktop/Developments/Teddy/src/pages/ListClients/components/Modals/DeleteClient.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
       </file>
-      <file name="EditClient.tsx" path="/Users/victorsouza/Desktop/Developments/Teddy/src/pages/List/components/Modals/EditClient.tsx">
+      <file name="EditClient.tsx" path="/Users/victorsouza/Desktop/Developments/Teddy/src/pages/ListClients/components/Modals/EditClient.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
