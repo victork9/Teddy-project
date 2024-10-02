@@ -12,7 +12,7 @@ export const ListClientsBody: React.FC<BodyList> = ({ clients, addAction, editAc
         <Grid container rowSpacing={4} spacing={3}>
             {clients?.length &&
                 clients?.map((item) => (
-                    <Grid item spacing={3} md={5} sm={6} xs={12} xl={3}>
+                    <Grid item flexWrap={"wrap"} flex={1} md={4} xl={3} sm={6} xs={12}>
                         <Card sx={card}>
                             <CardContent
                                 sx={{

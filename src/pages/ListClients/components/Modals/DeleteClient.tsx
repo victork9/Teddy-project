@@ -12,7 +12,7 @@ interface Props {
 const DeleteClient: React.FC<Props> = ({ visible, onCloseModal, onAction, name }) => {
     return (
         <BasicModal title="Excluir cliente:" visible={visible} onClose={onCloseModal}>
-            <Typography flexWrap={"wrap"} display={"flex"} gap={"4px"}>
+            <Typography flexWrap={"wrap"} display={"flex"} gap={"4px"} flex={1}>
                 Você está prestes a excluir o cliente: <Typography fontWeight={"bold"}>{name}</Typography>
             </Typography>
             <Button
