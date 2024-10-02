@@ -63,15 +63,33 @@ const App = () => {
         });
         handleShowModal(true, "edit");
     };
+    const validateForm = () => {
+        const salary = convertToNumber(userData.salary);
+        const companyValue = convertToNumber(userData.companyValuation);
+        if (!userData?.name || !salary || !companyValue) {
+            setUserData((prev: any) => ({
+                ...prev,
+                error: true,
+            }));
+            return true;
+        }
+        return false;
+    };
+
     const onCreateUser = async () => {
+        const salary = convertToNumber(userData.salary);
+        const companyValue = convertToNumber(userData.companyValuation);
+        if (validateForm()) return;
         await handleCreateClient({
             ...userData,
-            salary: convertToNumber(userData.salary),
-            companyValuation: convertToNumber(userData.companyValuation),
+            salary: salary,
+            companyValuation: companyValue,
         });
         onCloseModal();
     };
     const onEditClient = async () => {
+        if (validateForm()) return;
+
         await handleEditClient(userData.id, {
             ...userData,
             salary: convertToNumber(userData?.salary),
@@ -93,6 +111,7 @@ const App = () => {
     const handleChangeUser = (key: string, value: string | number) => {
         setUserData((prev: any) => ({
             ...prev,
+            error: false,
             [key]: value,
         }));
     };

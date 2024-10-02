@@ -49,7 +49,7 @@ export const selectHeader: SxProps = {
 }
 export const paginationStyle: SxProps = {
 	".Mui-selected": {
-		background: "#EC6724",
+		backgroundColor: "#EC6724 !important",
 		color: "white",
 		borderRadius: "4px",
 		":hover": {
