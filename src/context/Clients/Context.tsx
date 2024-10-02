@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ClientProvider } from ".";
 import { Props } from "./types";
-import { getAllUsers, UsersList } from "@services/user";
+import { getAllClients, UsersList } from "@services/user";
 
 const ClientsContext = ({ children }: Props) => {
     const [clients, setClients] = useState<UsersList>({
@@ -10,7 +10,7 @@ const ClientsContext = ({ children }: Props) => {
         totalPages: 1,
     });
     const handleResponse = async () => {
-        const response = await getAllUsers();
+        const response = await getAllClients();
         setClients(response);
     };
     useEffect(() => {

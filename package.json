@@ -77,7 +77,8 @@
             "vite-env.d.ts",
             "constants",
             "main.tsx",
-            "index.ts"
+            "index.ts",
+            "App.tsx"
         ],
         "moduleNameMapper": {
             "^@/(.*)$": [

@@ -3,6 +3,13 @@ import { act, renderHook, } from "@testing-library/react";
 import { useClients } from "./useClients";
 import { useContextClients } from "../context/Clients";
 import { expect } from "@jest/globals";
+import api from '../services'
+import { Client, UsersList } from "@/services/user";
+
+
+jest.mock("../services");
+jest.mock("../services/user");
+let axiosMocked: jest.Mocked<typeof api>;
 
 jest.mock("../context/Clients", () => ({
 	useContextClients: jest.fn(),
@@ -96,7 +103,13 @@ const mockClients = {
 
 describe("Testing useClients", () => {
 
+	beforeEach(() => {
+		axiosMocked = api as jest.Mocked<typeof api>;
+	});
 
+	afterEach(() => {
+		axiosMocked.get.mockClear();
+	});
 
 	it("Should update loading", () => {
 		(useContextClients as jest.Mock).mockReturnValue({
@@ -116,6 +129,23 @@ describe("Testing useClients", () => {
 			setClients: jest.fn(),
 			clients: mockClients
 		})
+		const data: UsersList = {
+			clients: [
+				{
+					"id": 70,
+					"name": "John Doe 23",
+					"salary": 100,
+					"companyValuation": 2000,
+					"createdAt": "2024-10-01T21:30:41.088Z",
+					"updatedAt": "2024-10-01T21:30:41.088Z"
+				},
+
+			],
+			"totalPages": 2,
+			"currentPage": 1
+		};
+		axiosMocked.get.mockResolvedValueOnce({ data });
+
 
 		const { result } = renderHook(() => useClients());
 
@@ -132,6 +162,20 @@ describe("Testing useClients", () => {
 			clients: mockClients
 		})
 
+		const data: Client = {
+			"id": 54,
+			"name": "John Doe 23",
+			"salary": 100,
+			"companyValuation": 2000,
+			"createdAt": "2024-10-01T21:30:41.088Z",
+			"updatedAt": "2024-10-01T21:30:41.088Z"
+		}
+
+
+
+		axiosMocked.get.mockResolvedValueOnce({ data });
+
+
 		const { result } = renderHook(() => useClients());
 
 		act(() => {
@@ -146,11 +190,20 @@ describe("Testing useClients", () => {
 			setClients: jest.fn(),
 			clients: mockClients
 		})
+		const data = {
+			"name": "John Doe 23",
+			"salary": 100,
+			"companyValuation": 2000,
+
+		}
+
+		axiosMocked.post.mockResolvedValueOnce({ data });
 
 		const { result } = renderHook(() => useClients());
 
+
 		act(() => {
-			result.current.handleCreateUser({
+			result.current.handleCreateClient({
 				name: "John Do testee",
 				salary: 500.01,
 				companyValuation: 3500,
@@ -165,6 +218,16 @@ describe("Testing useClients", () => {
 			clients: mockClients
 		})
 
+		const data = {
+			"name": "John Doe 23",
+			"salary": 100,
+			"companyValuation": 2000,
+
+		}
+
+		axiosMocked.patch.mockResolvedValueOnce({ data });
+
+
 		const { result } = renderHook(() => useClients());
 
 		act(() => {
@@ -173,6 +236,19 @@ describe("Testing useClients", () => {
 				salary: 500.04,
 				companyValuation: 3501.20,
 			})
+		});
+	});
+	it("Should delete client", () => {
+		(useContextClients as jest.Mock).mockReturnValue({
+			setClients: jest.fn(),
+			clients: mockClients
+		})
+		axiosMocked.delete.mockResolvedValueOnce({});
+
+		const { result } = renderHook(() => useClients());
+
+		act(() => {
+			result.current.handleDeleteClient(54)
 		});
 	});
 

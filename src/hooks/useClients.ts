@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createUser, deleteClient, editUser, getAllUsers, getUserById, User } from "@services/user";
+import { createUser, deleteClient, editClient, getAllClients, getClienteById, User } from "@services/user";
 import { useContextClients } from "@context/Clients";
 
 export const useClients = () => {
@@ -9,7 +9,7 @@ export const useClients = () => {
 	const handleGetAllClients = async (page = 1, limit?: number) => {
 		setIsLoading(true)
 
-		const response = await getAllUsers(page, limit);
+		const response = await getAllClients(page, limit);
 		setClients(response);
 		setIsLoading(false)
 
@@ -18,7 +18,7 @@ export const useClients = () => {
 	const handleGetUser = async (id: number) => {
 		try {
 			setIsLoading(true)
-			return await getUserById(id);
+			return await getClienteById(id);
 
 		} catch {
 			return null
@@ -26,7 +26,7 @@ export const useClients = () => {
 			setIsLoading(false)
 		}
 	};
-	const handleCreateUser = async (userData: User) => {
+	const handleCreateClient = async (userData: User) => {
 		try {
 			await createUser(userData);
 			handleGetAllClients()
@@ -41,7 +41,7 @@ export const useClients = () => {
 	};
 	const handleEditClient = async (id: number, userData: User) => {
 		try {
-			await editUser(userData, id);
+			await editClient(userData, id);
 
 			handleGetAllClients()
 		} catch {
@@ -69,7 +69,7 @@ export const useClients = () => {
 		loading,
 		setIsLoading,
 		handleGetUser,
-		handleCreateUser,
+		handleCreateClient,
 		handleEditClient,
 		handleDeleteClient,
 		handleGetAllClients
