@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+
+        "lib": ["ES2023"],
+        "module": "ESNext",
+        "skipLibCheck": true,
+
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "noEmit": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"],
+            "@context/*": ["src/context/*"],
+            "@pages/*": ["src/pages/*"],
+            "@services/*": ["src/services/*"],
+            "@utils/*": ["src/utils/*"],
+            "@atomic/*": ["src/atomic/*"],
+            "@hooks/*": ["src/hooks/*"]
+        }
+    },
+    "include": ["vite.config.ts"]
+}
