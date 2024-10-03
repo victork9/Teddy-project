@@ -1,1 +1,3 @@
-export interface Props { show: boolean }
+export interface Props {
+  show: boolean;
+}
