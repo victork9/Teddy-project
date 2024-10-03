@@ -7,5 +7,5 @@ export interface ClientsrContextType {
 }
 
 export interface Props {
-  children: ReactNode | ReactNode[]
+  children: ReactNode | ReactNode[];
 }
