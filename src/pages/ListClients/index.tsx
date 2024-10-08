@@ -156,34 +156,31 @@ const App = () => {
                     <MenuIcon />
                 </Box>
             </Box>
-            {clients.clients?.length ? (
-                <>
-                    <ListOrganism
-                        header={{
-                            limit: limit,
-                            onChange: (page, value) => {
-                                onPageOrLimitChange(page, Number(value));
-                                setLimit(Number(value));
-                            },
-                            totalClients: clients.clients?.length,
-                        }}
-                        body={{
-                            addAction: () => {},
-                            editAction: (item) => onGetUser(item?.id),
-                            deleteAction: (item) => {
-                                setUserData(item);
-                                handleShowModal(true, "deleteClient");
-                            },
-                            clients: clients.clients,
-                        }}
-                        footer={{
-                            onClick: () => handleShowModal(true, "create"),
-                            clients: clients,
-                            onChangePage: (value) => onPageOrLimitChange(value),
-                        }}
-                    />
-                </>
-            ) : null}
+
+            <ListOrganism
+                header={{
+                    limit: limit,
+                    onChange: (page, value) => {
+                        onPageOrLimitChange(page, Number(value));
+                        setLimit(Number(value));
+                    },
+                    totalClients: clients.clients?.length,
+                }}
+                body={{
+                    addAction: () => {},
+                    editAction: (item) => onGetUser(item?.id),
+                    deleteAction: (item) => {
+                        setUserData(item);
+                        handleShowModal(true, "deleteClient");
+                    },
+                    clients: clients.clients,
+                }}
+                footer={{
+                    onClick: () => handleShowModal(true, "create"),
+                    clients: clients,
+                    onChangePage: (value) => onPageOrLimitChange(value),
+                }}
+            />
         </Box>
     );
 };
