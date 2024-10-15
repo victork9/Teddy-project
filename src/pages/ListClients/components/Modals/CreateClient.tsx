@@ -1,14 +1,14 @@
 import BasicModal from "@atomic/molecules/BasicModal";
 import Input from "@atomic/atoms/Input";
 import { Button } from "@mui/material";
-import { formatCurrencyToFields } from "@utils/formatCurrency";
+import { convertToNumber, formatCurrencyToFields } from "@utils/formatCurrency";
 import React from "react";
 import { User } from "@services/user";
 
 interface Props {
     visible: boolean;
     onCloseModal: () => void;
-    userData: User;
+    userData: User & { error?: boolean };
     handleChangeUser: (key: string, value: string) => void;
     onAction: () => void;
 }
@@ -17,6 +17,8 @@ const CreateClient: React.FC<Props> = ({ visible, onCloseModal, userData, handle
     return (
         <BasicModal title="Criar cliente:" visible={visible} onClose={onCloseModal}>
             <Input
+                error={!userData?.name && userData?.error}
+                errormessage="Insira o nome"
                 Id="nameCreateuser"
                 label={"Digite o nome:"}
                 value={userData?.name}
@@ -25,6 +27,8 @@ const CreateClient: React.FC<Props> = ({ visible, onCloseModal, userData, handle
                 }}
             />
             <Input
+                error={!convertToNumber(String(userData?.salary)) && userData?.error}
+                errormessage="Insira o salário"
                 Id="salaryCreateuser"
                 label={"Digite o salário:"}
                 value={String(userData?.salary)}
@@ -33,6 +37,8 @@ const CreateClient: React.FC<Props> = ({ visible, onCloseModal, userData, handle
                 }}
             />
             <Input
+                error={!convertToNumber(String(userData?.companyValuation)) && userData?.error}
+                errormessage="Insira o valor da empresa"
                 Id="companyCreateuser"
                 label={"Digite o valor da empresa:"}
                 value={String(userData?.companyValuation)}

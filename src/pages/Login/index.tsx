@@ -7,11 +7,25 @@ import Input from "@atomic/atoms/Input";
 
 const Login = () => {
     const navigate = useNavigate();
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState({
+        value: "",
+        hasError: false,
+    });
     const { setUser } = useContextUser();
 
+    const handleInput = (value: string, error: boolean) => {
+        setInput({
+            value,
+            hasError: error,
+        });
+    };
+
     const handleLogin = () => {
-        setUser(input);
+        if (!input.value) {
+            handleInput("", true);
+            return 
+        }
+        setUser(input.value);
         navigate("/clients");
     };
 
@@ -21,7 +35,16 @@ const Login = () => {
                 <Typography variant="h1" sx={Title}>
                     Olá, seja bem-vindo!
                 </Typography>
-                <Input fullWidth sx={styleTextField} id="login-input" label="Digite o seu nome" value={input} onChange={(value) => setInput(value)} />
+                <Input
+                    error={input.hasError}
+                    errormessage="Por favor insira seu nome"
+                    fullWidth
+                    sx={styleTextField}
+                    id="login-input"
+                    label="Digite o seu nome"
+                    value={input.value}
+                    onChange={(value) => handleInput(value, false)}
+                />
                 <Button onClick={handleLogin} variant="contained" color="warning" fullWidth>
                     Entrar
                 </Button>
